@@ -654,12 +654,12 @@ void AlgorithmCiftiSeparate::getCroppedVolSpace(const CiftiFile* ciftiIn, const 
     int64_t numVoxels = (int64_t)myMap.size();
     if (numVoxels > 0)
     {//make a voxel bounding box to minimize memory usage
-        int extrema[6] = { myMap[0].m_ijk[0],
-            myMap[0].m_ijk[0],
-            myMap[0].m_ijk[1],
-            myMap[0].m_ijk[1],
-            myMap[0].m_ijk[2],
-            myMap[0].m_ijk[2]
+        int extrema[6] = { static_cast<int>(myMap[0].m_ijk[0]),
+            static_cast<int>(myMap[0].m_ijk[0]),
+            static_cast<int>(myMap[0].m_ijk[1]),
+            static_cast<int>(myMap[0].m_ijk[1]),
+            static_cast<int>(myMap[0].m_ijk[2]),
+            static_cast<int>(myMap[0].m_ijk[2])
         };
         for (int64_t i = 1; i < numVoxels; ++i)
         {
@@ -699,12 +699,12 @@ void AlgorithmCiftiSeparate::getCroppedVolSpaceAll(const CiftiFile* ciftiIn, con
     int64_t numVoxels = (int64_t)myMap.size();
     if (numVoxels > 0)
     {//make a voxel bounding box to minimize memory usage
-        int extrema[6] = { myMap[0].m_ijk[0],
-            myMap[0].m_ijk[0],
-            myMap[0].m_ijk[1],
-            myMap[0].m_ijk[1],
-            myMap[0].m_ijk[2],
-            myMap[0].m_ijk[2]
+        int extrema[6] = { static_cast<int>(myMap[0].m_ijk[0]),
+            static_cast<int>(myMap[0].m_ijk[0]),
+            static_cast<int>(myMap[0].m_ijk[1]),
+            static_cast<int>(myMap[0].m_ijk[1]),
+            static_cast<int>(myMap[0].m_ijk[2]),
+            static_cast<int>(myMap[0].m_ijk[2])
         };
         for (int64_t i = 1; i < numVoxels; ++i)
         {
